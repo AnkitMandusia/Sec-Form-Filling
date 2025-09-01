@@ -2,10 +2,6 @@
 
 **An advanced multi-agent AI system for interactive analysis and on-the-fly visualization of corporate financial documents.**
 
----
-
-*Replace this with a GIF of your Streamlit App in Action!*
-![Kepler Financial Analyst Demo](placeholder.gif)
 
 ---
 ## Live Demo 🚀
