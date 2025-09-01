@@ -9,7 +9,7 @@
 
 ---
 
-##  Overview 📝
+## ## Overview 📝
 
 Kepler is a state-of-the-art web application that transforms the way users interact with dense financial reports like SEC 10-K filings. Moving beyond simple text search, this project leverages a sophisticated **multi-agent AI system** to provide a truly interactive analysis experience.
 
@@ -17,7 +17,7 @@ Users can ask complex questions in natural language, and the system can both gen
 
 ---
 
-##  Key Features ✨
+## ## Key Features ✨
 
 * **🤖 Multi-Agent System:** Employs specialist AI agents for distinct tasks (routing, data extraction, answering) to ensure high accuracy and reliability, avoiding the pitfalls of single-model systems.
 * **📊 On-the-Fly Visualizations:** Translates natural language requests like *"Chart the net income over the last 3 years"* into interactive plots using Plotly, powered by an AI that understands the user's visualization intent.
@@ -28,51 +28,49 @@ Users can ask complex questions in natural language, and the system can both gen
 
 ---
 
-##  System Architecture 🏗️
+## ## System Architecture 🏗️
 
 The project is built on a professional multi-agent architecture where tasks are delegated to the most suitable component. This separation of concerns is the key to the application's reliability.
 
 ```mermaid
 graph TD
-    A[User Prompt] --> B[Retrieve Context RAG];
-    B --> C[Router Agent];
-    C -->|text intent| D[Answer Agent];
-    C -->|chart intent| E[Chart Type Agent];
-    
-    E -->|time-series| F[Time-Series Data Extractor];
-    E -->|comparison| G[Comparison Data Extractor];
-    
-    F --> H[Python Backend Pandas];
-    G --> H;
-    
-    H --> I[Plotly Visualization];
-    D --> J[Text Response w/ Citation];
-
-    subgraph Python/Streamlit Backend
-        H
-        I
+    subgraph "Input Layer"
+        A[User Prompt]
     end
 
-    subgraph AI Agents (LLM)
-        C
-        D
-        E
-        F
-        G
+    subgraph "Processing Core"
+        B[1. Retrieve Context with RAG]
+        C[2. Router Agent Determines Intent]
     end
+
+    subgraph "Specialist Agent Layer"
+        D["Answer Agent (for Text)"]
+        E["Chart Agent (for Visuals)"]
+    end
+
+    subgraph "Output Layer"
+        F[Python builds Plotly Chart]
+        G[Streamed Text Response]
+    end
+
+    A --> B
+    B --> C
+    C -- "Intent is 'chart'" --> E
+    C -- "Intent is 'text'" --> D
+    E --> F
+    D --> G
 ```
 
 1.  **Retrieval-Augmented Generation (RAG):** The user's prompt is first used to retrieve the most relevant text chunks from the document using a Qdrant vector database.
 2.  **Router Agent:** This specialist AI's only job is to classify the user's intent as either "text" or "chart".
 3.  **Specialist Agents:** Based on the router's decision, a specialized agent is activated:
     * **Answer Agent:** Generates a detailed text response.
-    * **Chart Type & Data Extractor Agents:** Work together to first classify the required chart (e.g., time-series vs. comparison) and then extract the necessary data.
+    * **Chart Agent:** Translates the user's request into a structured data query.
 4.  **Python Backend (The Orchestrator):** The Streamlit application acts as the central controller. It receives the outputs from the AI agents and uses powerful libraries like Pandas and Plotly to process the data and render the final, reliable output.
 
 ---
 
-
-##  Technology Stack 🛠️
+## ## Technology Stack 🛠️
 
 | Technology | Description |
 | :--- | :--- |
@@ -87,7 +85,7 @@ graph TD
 
 ---
 
-## Local Setup & Installation ⚙️
+## ## Local Setup & Installation ⚙️
 
 To run this project locally, follow these steps:
 
@@ -117,7 +115,7 @@ To run this project locally, follow these steps:
 
 ---
 
-##  Usage ▶️
+## ## Usage ▶️
 
 Once the setup is complete, you can run the Streamlit application with a single command:
 
@@ -129,6 +127,6 @@ This will start the web server, and you can access the Kepler Financial Analyst 
 
 ---
 
-##  License 📄
+## ## License 📄
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
