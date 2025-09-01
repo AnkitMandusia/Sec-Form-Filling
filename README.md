@@ -16,7 +16,7 @@
 
 ---
 
-## ## Overview 📝
+#### Overview 📝
 
 Kepler is a state-of-the-art web application that transforms the way users interact with dense financial reports like SEC 10-K filings. Moving beyond simple text search, this project leverages a sophisticated **multi-agent AI system** to provide a truly interactive analysis experience.
 
