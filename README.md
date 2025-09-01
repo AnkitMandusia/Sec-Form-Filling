@@ -8,7 +8,7 @@
 ![Kepler Financial Analyst Demo](placeholder.gif)
 
 ---
-##  Live Demo 🚀
+## Live Demo 🚀
 
 **Watch a complete video walkthrough of the application in action:**
 
