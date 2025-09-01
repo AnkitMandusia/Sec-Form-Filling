@@ -8,7 +8,7 @@
 ![Kepler Financial Analyst Demo](placeholder.gif)
 
 ---
-## ## Live Demo 🚀
+##  Live Demo 🚀
 
 **Watch a complete video walkthrough of the application in action:**
 
@@ -16,7 +16,7 @@
 
 ---
 
-#### Overview 📝
+## Overview 📝
 
 Kepler is a state-of-the-art web application that transforms the way users interact with dense financial reports like SEC 10-K filings. Moving beyond simple text search, this project leverages a sophisticated **multi-agent AI system** to provide a truly interactive analysis experience.
 
@@ -24,7 +24,7 @@ Users can ask complex questions in natural language, and the system can both gen
 
 ---
 
-## ## Key Features ✨
+##  Key Features ✨
 
 * **🤖 Multi-Agent System:** Employs specialist AI agents for distinct tasks (routing, data extraction, answering) to ensure high accuracy and reliability, avoiding the pitfalls of single-model systems.
 * **📊 On-the-Fly Visualizations:** Translates natural language requests like *"Chart the net income over the last 3 years"* into interactive plots using Plotly, powered by an AI that understands the user's visualization intent.
@@ -35,7 +35,7 @@ Users can ask complex questions in natural language, and the system can both gen
 
 ---
 
-## ## System Architecture 🏗️
+##  System Architecture 🏗️
 
 The project is built on a professional multi-agent architecture where tasks are delegated to the most suitable component. This separation of concerns is the key to the application's reliability.
 
@@ -77,7 +77,7 @@ graph TD
 
 ---
 
-## ## Technology Stack 🛠️
+##  Technology Stack 🛠️
 
 | Technology | Description |
 | :--- | :--- |
@@ -92,7 +92,7 @@ graph TD
 
 ---
 
-## ## Local Setup & Installation ⚙️
+##  Local Setup & Installation ⚙️
 
 To run this project locally, follow these steps:
 
@@ -122,7 +122,7 @@ To run this project locally, follow these steps:
 
 ---
 
-## ## Usage ▶️
+##  Usage ▶️
 
 Once the setup is complete, you can run the Streamlit application with a single command:
 
@@ -134,6 +134,6 @@ This will start the web server, and you can access the Kepler Financial Analyst 
 
 ---
 
-## ## License 📄
+##  License 📄
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
