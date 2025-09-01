@@ -34,26 +34,26 @@ The project is built on a professional multi-agent architecture where tasks are 
 
 ```mermaid
 graph TD
-    A[User Prompt] --> B{Retrieve Context (RAG)};
-    B --> C{Router Agent};
-    C -->|"text" intent| D[Answer Agent];
-    C -->|"chart" intent| E{Chart Type Agent};
+    A[User Prompt] --> B[Retrieve Context RAG];
+    B --> C[Router Agent];
+    C -->|text intent| D[Answer Agent];
+    C -->|chart intent| E[Chart Type Agent];
     
-    E -->|"time-series"| F[Time-Series Data Extractor];
-    E -->|"comparison"| G[Comparison Data Extractor];
+    E -->|time-series| F[Time-Series Data Extractor];
+    E -->|comparison| G[Comparison Data Extractor];
     
-    F --> H[Python Backend (Pandas)];
+    F --> H[Python Backend Pandas];
     G --> H;
     
     H --> I[Plotly Visualization];
     D --> J[Text Response w/ Citation];
 
-    subgraph "Python/Streamlit Backend"
+    subgraph Python/Streamlit Backend
         H
         I
     end
 
-    subgraph "AI Agents (LLM)"
+    subgraph AI Agents (LLM)
         C
         D
         E
@@ -71,6 +71,7 @@ graph TD
 
 ---
 
+
 ##  Technology Stack 🛠️
 
 | Technology | Description |
@@ -86,7 +87,7 @@ graph TD
 
 ---
 
-## ## Local Setup & Installation ⚙️
+## Local Setup & Installation ⚙️
 
 To run this project locally, follow these steps:
 
