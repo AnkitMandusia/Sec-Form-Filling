@@ -2,9 +2,8 @@
 
 **An advanced multi-agent AI system for interactive analysis and on-the-fly visualization of corporate financial documents.**
 
-
 ---
-## Live Demo 🚀
+## ## Live Demo 🚀
 
 **Watch a complete video walkthrough of the application in action:**
 
@@ -12,7 +11,7 @@
 
 ---
 
-## Overview 📝
+## ## Overview 📝
 
 Kepler is a state-of-the-art web application that transforms the way users interact with dense financial reports like SEC 10-K filings. Moving beyond simple text search, this project leverages a sophisticated **multi-agent AI system** to provide a truly interactive analysis experience.
 
@@ -20,7 +19,7 @@ Users can ask complex questions in natural language, and the system can both gen
 
 ---
 
-##  Key Features ✨
+## ## Key Features ✨
 
 * **🤖 Multi-Agent System:** Employs specialist AI agents for distinct tasks (routing, data extraction, answering) to ensure high accuracy and reliability, avoiding the pitfalls of single-model systems.
 * **📊 On-the-Fly Visualizations:** Translates natural language requests like *"Chart the net income over the last 3 years"* into interactive plots using Plotly, powered by an AI that understands the user's visualization intent.
@@ -31,7 +30,7 @@ Users can ask complex questions in natural language, and the system can both gen
 
 ---
 
-##  System Architecture 🏗️
+## ## System Architecture 🏗️
 
 The project is built on a professional multi-agent architecture where tasks are delegated to the most suitable component. This separation of concerns is the key to the application's reliability.
 
@@ -73,7 +72,7 @@ graph TD
 
 ---
 
-##  Technology Stack 🛠️
+## ## Technology Stack 🛠️
 
 | Technology | Description |
 | :--- | :--- |
@@ -87,14 +86,23 @@ graph TD
 | **Plotly** | For creating rich, interactive, and professional data visualizations. |
 
 ---
+## ## Challenges & Learnings 🧠
 
-##  Local Setup & Installation ⚙️
+This project involved overcoming several key challenges, leading to significant learnings in building robust AI systems:
+
+* **Challenge:** The base LLM (`Mistral-7B`) proved unreliable for complex, multi-step tasks involving structured data generation (like creating JSON or CSV).
+* **Solution:** Evolved the architecture from a single, complex prompt to a **multi-agent system**. By giving each AI agent a single, simple task (like routing or classification), overall system reliability increased dramatically.
+* **Learning:** The most robust AI systems **delegate tasks to the right tool**. We leveraged the LLM for what it's best at (understanding language) and used deterministic Python code (with Pandas) for what it's best at (processing and structuring data), leading to a highly accurate and reliable final product.
+
+---
+
+## ## Local Setup & Installation ⚙️
 
 To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/kepler-financial-analyst.git](https://github.com/your-username/kepler-financial-analyst.git)
+    git clone [https://github.com/AnkitMandusia/kepler-financial-analyst.git](https://github.com/AnkitMandusia/kepler-financial-analyst.git)
     cd kepler-financial-analyst
     ```
 
@@ -106,8 +114,25 @@ To run this project locally, follow these steps:
     ```
 
 3.  **Install dependencies:**
+    Create a `requirements.txt` file with the contents below, then run:
     ```bash
     pip install -r requirements.txt
+    ```
+
+    **`requirements.txt`:**
+    ```
+    streamlit
+    torch
+    transformers
+    langchain-huggingface
+    langchain
+    qdrant-client
+    pandas
+    plotly
+    accelerate
+    bitsandbytes
+    sentence-transformers
+    unstructured[html]
     ```
 
 4.  **Set up environment variables:**
@@ -118,7 +143,7 @@ To run this project locally, follow these steps:
 
 ---
 
-##  Usage ▶️
+## ## Usage ▶️
 
 Once the setup is complete, you can run the Streamlit application with a single command:
 
@@ -130,6 +155,6 @@ This will start the web server, and you can access the Kepler Financial Analyst 
 
 ---
 
-##  License 📄
+## ## License 📄
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
